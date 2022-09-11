@@ -1,72 +1,8 @@
-import { useState } from "react";
 import femaleProfile from "./images/femaleProfile.jpg";
 import maleProfile from "./images/maleProfile.jpg";
 
-const Employees = () => {
-  const [selectedTeam, setTeam] = useState("TeamB");
-  const [employees, setEmployees] = useState([
-    {
-      id: 1,
-      fullName: "Precious Imoniakemu",
-      designation: "FullStack Developer",
-      gender: "male",
-      teamName: "TeamA",
-    },
-    {
-      id: 2,
-      fullName: "John Doe",
-      designation: "Product Manager",
-      gender: "male",
-      teamName: "TeamA",
-    },
-    {
-      id: 3,
-      fullName: "Praise Imoniakemu",
-      designation: "Data Scientist",
-      gender: "female",
-      teamName: "TeamA",
-    },
-    {
-      id: 4,
-      fullName: "Dara Paul",
-      designation: "Content Writer",
-      gender: "female",
-      teamName: "TeamB",
-    },
-    {
-      id: 5,
-      fullName: "John Doe",
-      designation: "Product Manager",
-      gender: "male",
-      teamName: "TeamA",
-    },
-    {
-      id: 6,
-      fullName: "Praise Imoniakemu",
-      designation: "Data Scientist",
-      gender: "female",
-      teamName: "TeamA",
-    },
-    {
-      id: 7,
-      fullName: "Dara Paul",
-      designation: "Content Writer",
-      gender: "female",
-      teamName: "TeamB",
-    },
-  ]);
-
-  function handleTeamSelectionChange(event)
-  {
-    setTeam(event.target.value);
-  }
-  function handleEmployeeCardClick(event){
-    const transformedEmployees = employees.map((employee) => employee.id === parseInt(event.currentTarget.id)
-    ?(employee.teamName === selectedTeam)?{...employee, teamName:''}:{...employee,teamName: selectedTeam}:employee);
-    
-    setEmployees(transformedEmployees);
-  }
-
+const Employees = ({employees, selectedTeam, handleEmployeeCardClick, handleTeamSelectionChange}) => {
+  
   return (
     <main className="container">
       <div className="row justify-content-center mt-3 mb-3">
