@@ -118,8 +118,7 @@ function App() {
             element={
               <GroupedTeamMembers
                 employees={employees}
-                teamMemberCount={teamMemberCount}
-                selectedTeam={setTeam}
+                 selectedTeam={setTeam}
                 setTeam={setTeam}
               />
             }
