@@ -20,7 +20,7 @@ const GroupedTeamMembers = ({ employees, selectedTeam, setTeam}) => {
       (employee) => employee.teamName === "TeamB"
     );
     var teamB = {
-      team: "TeamA",
+      team: "TeamB",
       members: teamBMembers,
       collapsed: selectedTeam === "TeamB" ? false : true,
     };
